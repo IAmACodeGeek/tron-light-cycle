@@ -20,7 +20,7 @@ RenderSettings:
   m_FogDensity: 0.01
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
-  m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
+  m_AmbientSkyColor: {r: 0, g: 0, b: 0, a: 1}
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
@@ -167,7 +167,7 @@ GameObject:
   - component: {fileID: 330585544}
   - component: {fileID: 330585547}
   - component: {fileID: 330585548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -670,8 +670,8 @@ MonoBehaviour:
   - {fileID: 398055628}
   - {fileID: 638818702}
   - {fileID: 2947736}
-  spawnInterval: 1
-  maxSpawnedWalls: 5
+  spawnInterval: 0.05
+  maxSpawnedWalls: 100
 --- !u!1 &1937985172
 GameObject:
   m_ObjectHideFlags: 0
@@ -760,7 +760,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 2990f9bbea43da845955eb18b9ca974b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -861,7 +861,7 @@ Transform:
   m_GameObject: {fileID: 6654684622703387926}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -899,7 +899,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6654684622703387926}
-  m_Mesh: {fileID: -8274146998859561939, guid: a302cde944442004984c8088fa3b00c5, type: 3}
+  m_Mesh: {fileID: -8274146998859561939, guid: 59d6f7f9a60a94748aaccebbc842866a, type: 3}
 --- !u!114 &6971074495931101194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,6 +915,7 @@ MonoBehaviour:
   topSpeed: 30
   accelerationFactor: 0.5
   decelerationFactor: 1
+  brakingFactor: 3
   leanFactor: 2
   deleanFactor: 3
   turnThreshold: 1.5
@@ -928,9 +929,9 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6654684622703387926}
   serializedVersion: 4
-  m_Mass: 180
+  m_Mass: 500
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -943,7 +944,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
